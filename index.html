@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<head>
+
+    <style>
+        #rick {
+            text-align: center;
+
+        }
+
+        #prankText {
+            font-size: 100px;
+        }
+
+        #prank {
+            text-align: center;
+            display: none;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="rick">
+        <a href="">CLICK ME!</a>
+    </div>
+    <div id="prank">
+        <h1 id="prankText">LOL!! PRANKED!!!</h1>
+        <h3>MEN, det finns faktiskt en hemlighet att hitta på hemsidan... Lycka till!</h3>
+        <iframe height="400" width="600" src="https://gfycat.com/ifr/sanedisgustingatlanticridleyturtle"></iframe>
+        <h6 style="color: white">SECRET CODE</h6>
+    </div>
+</body>
+
+<script>
+
+    var colors = ["red", "blue", "yellow", "green", "purple", "orange"];
+    var i = 0;
+    var prankText = document.getElementById("prankText");
+
+    $(document).ready(function () {
+
+        $(document).on("click", "#rick", function (e) {
+            e.preventDefault();
+            window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+            document.getElementById("rick").style.display = "none";
+            document.getElementById("prank").style.display = "block"
+
+            setInterval(function () {
+                if (i == colors.length) {
+                    i = 0;
+                }
+                prankText.style.color = colors[i];
+                i++;
+            }, 50);
+
+            return false;
+        });
+    });
+</script>
+
+</html>
